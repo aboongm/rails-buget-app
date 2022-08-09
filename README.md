@@ -33,7 +33,7 @@ To get a local copy up and running follow these simple example steps.
 
 - Clone the project
 
-git clone git@github.com:aboongm/rails-buget-app.git
+git clone https://github.com/aboongm/rails-buget-app.git
 
 cd rails-buget-app
 
@@ -66,7 +66,8 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse 
+- Inspired by Original design idea by [Gregoire Vella](https://www.behance.net/gregoirevella) on Behance
 
 ## 📝 License
 
-This project is [MIT](./LICENSE.md) licensed.
+This project is [MIT](./LICENSE) licensed.
