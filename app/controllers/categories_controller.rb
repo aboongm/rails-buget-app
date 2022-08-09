@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
     end
 
     def show
-        @category = Expense.all.where(category_id: @category.id))     
+        @category = Expense.all.where(category_id: @category.id)     
     end
     
     def new
@@ -33,10 +33,9 @@ class CategoriesController < ApplicationController
     def update
         respond_to do |format|
             if @category.update(category_params)
-                format.html {redirect_to category(@category), notice: "Category was successfully updated."}
+                format.html { redirect_to category(@category), notice: "Category was successfully updated."}
             else 
-                format.html {render :edit, status: :unprocessable_entity}
-            end
+                format.html { render :edit, status: :unprocessable_entity}
             end
         end
     end
