@@ -1,13 +1,28 @@
+<div class="card m-3 rounded">
+  <% if @categories.any?%>
+    <% @categories.each do |category| %>
+      <div class="category-div d-inline-flex">
+        <div class="category-info">
+          <p> <%= image_tag category.icon ,class:"p-2 m-1 rounded img-thumbnail category-img"%></p>
+        </div>
+        <div class="w-100 d-inline-flex justify-content-between">
+          <div>
+            <ul class="d-flex flex-column justify-content-center h-100">
+              <li> <p class="h4 pb-4"><%= link_to category.name, category_path(category) %></p></li>
+              <li> <p> <%= category.created_at.strftime("%d-%b-%Y")%></p></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="d-flex flex-column justify-content-center h-100">
+              <li><p class="h5 pb-4 price text-center fw-bold"> $<%= category.expenses.sum(:amount) %></p></li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  <%else%>
+    <p class="p-2 m-2 h3">There is no category added!!!</p>
+  <%end%>
 
-  <div class="flex items-center justify-between bg-slate-300">
-    <div class="p-4 w-20">
-        <img src="<%=category.icon%>" alt="icon" />
-    </div>
-    <div class="flex flex-col items-center bg-white">
-        <h3 class=""><%= category.name.capitalize %></h3>
-        <p><%= category.created_at.strftime("%d %b %Y") %></p>
-    </div>
-    <p class="bg-gray-200">$</p> 
-  </div>
-  
-
+</div>  

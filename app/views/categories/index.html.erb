@@ -1,9 +1,12 @@
 
-<section class="bg-slate-200 h-screen flex flex-col items-stretch justify-between">
-    <header class="height-10 bg-slate-700 flex justify-between items-center px-10">
-        <%= link_to image_tag("https://img.icons8.com/stickers/344/back.png"), categories_path, class: "back_btn" %>
-        <h1 class="text-slate-200 font-bold text-2xl">Categories</h1>
-    </header>
+<section class="text-center">
+    <div class="header d-flex align-items-center justify-content-between px-4">
+        <div>
+            <%= render "shared/navbar" %>
+        </div>
+        <h4 class="text-white"><%= link_to "Add Category", new_category_path, class: "text-white" %></h4>
+    </div>
+   
 
     <% if flash.notice %>
         <p><%= notice %></p>
@@ -15,9 +18,5 @@
         <% end %>
     </div>
        
-    <footer class="height-10 bg-slate-700 flex items-center justify-center">
-        <button class="bg-slate-500 hover:bg-slate-400 text-slate-200 font-bold py-2 px-4 m-3 rounded">
-            <%= link_to "Add Category", new_category_path %>
-        </button>
-    </footer>
+   
 </section>
