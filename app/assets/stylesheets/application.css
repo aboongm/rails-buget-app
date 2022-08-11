@@ -14,10 +14,21 @@
  *= require_self
  */
 
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
  :root {
   --main-color: #3778c2;
   --secondary-color: #5fb523;
   --text-color: #434b54;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 .splash {
@@ -26,16 +37,24 @@
   align-items: stretch;
   justify-content: flex-end;
   height: 100vh;
+  background-color: #f0f2f1;
 }
 
  .header {
-  background-color: var(--main-color);
+  background-image: linear-gradient(to left, #2c67ab, #3a79c1);
   height: 10vh;
 }
 
+.bg-none {
+  background: none;
+  border: none;
+  color: #fff;
+}
+
  .back_btn img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
   }
 
 .main-color {
