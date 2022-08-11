@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   end
 
   authenticated do
-    root "categories#index"
+    root "categories#index", as: :authenticated_root
   end
 end

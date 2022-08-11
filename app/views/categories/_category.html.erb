@@ -1,0 +1,13 @@
+
+  <div class="flex items-center justify-between bg-slate-300">
+    <div class="p-4 w-20">
+        <img src="<%=category.icon%>" alt="icon" />
+    </div>
+    <div class="flex flex-col items-center bg-white">
+        <h3 class=""><%= category.name.capitalize %></h3>
+        <p><%= category.created_at.strftime("%d %b %Y") %></p>
+    </div>
+    <p class="bg-gray-200">$</p> 
+  </div>
+  
+

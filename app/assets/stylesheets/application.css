@@ -14,7 +14,22 @@
  *= require_self
  */
 
- .height-10 {
+ :root {
+  --main-color: #3778c2;
+  --secondary-color: #5fb523;
+  --text-color: #434b54;
+}
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  height: 100vh;
+}
+
+ .header {
+  background-color: var(--main-color);
   height: 10vh;
 }
 
@@ -22,3 +37,8 @@
     width: 20px;
     height: 20px;
   }
+
+.main-color {
+  background-color: var(--main-color);
+  color: #fff;
+}

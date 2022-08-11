@@ -1,2 +1,16 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<section class="bg-slate-200 h-screen flex flex-col items-stretch justify-start">
+    <header class="height-10 bg-slate-700 flex justify-between items-center px-10">
+        <%= link_to image_tag("https://img.icons8.com/stickers/344/back.png"), categories_path, class: "back_btn" %>
+        <h1 class="text-slate-200 font-bold text-2xl">Expenses</h1>
+    </header>
+
+    <% if flash.notice %>
+        <p><%= notice %></p>
+    <% end %>
+
+    <footer class="height-10 bg-slate-700 flex items-center justify-center">
+        <button class="bg-slate-500 hover:bg-slate-400 text-slate-200 font-bold py-2 px-4 m-3 rounded">
+            <%= link_to "Add Expense", new_expense_path %>
+        </button>
+    </footer>
+</section>
