@@ -1,9 +1,8 @@
-<div class="card m-3 rounded">
-  <% if @categories.any?%>
-    <% @categories.each do |category| %>
+
+    <div class="card m-3 rounded">
       <div class="category-div d-inline-flex">
         <div class="category-info">
-          <p> <%= image_tag category.icon ,class:"p-2 m-1 rounded img-thumbnail category-img"%></p>
+          <p> <%= image_tag category.icon, class:"p-2 m-1 rounded img-thumbnail category-img"%></p>
         </div>
         <div class="w-100 d-inline-flex justify-content-between">
           <div>
@@ -14,15 +13,12 @@
           </div>
           <div>
             <ul class="d-flex flex-column justify-content-center h-100">
-              <li><p class="h5 pb-4 price text-center fw-bold"> $<%= category.expenses.sum(:amount) %></p></li>
-              
+              <li><p class="h5 pb-4 text-center fw-bold"> $<%= total_amount_helper(Expense.all.where(category_id:category.id)) %></p></li>
+              <li><%= button_to "Delete", category_path(category), method: :delete, class:"btn btn-primary" %></li>
             </ul>
           </div>
         </div>
+        </div>  
       </div>
-    <%end%>
-  <%else%>
-    <p class="p-2 m-2 h3">There is no category added!!!</p>
-  <%end%>
-
-</div>  
+ 
+  
