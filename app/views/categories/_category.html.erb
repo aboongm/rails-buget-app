@@ -1,24 +1,23 @@
-
-    <div class="card m-3 rounded">
-      <div class="category-div d-inline-flex">
-        <div class="category-info">
-          <p> <%= image_tag category.icon, class:"p-2 m-1 rounded img-thumbnail category-img"%></p>
-        </div>
-        <div class="w-100 d-inline-flex justify-content-between">
-          <div>
-            <ul class="d-flex flex-column justify-content-center h-100">
-              <li> <p class="h4 pb-4"><%= link_to category.name, category_path(category) %></p></li>
-              <li> <p> <%= category.created_at.strftime("%d-%b-%Y")%></p></li>
-            </ul>
-          </div>
-          <div>
-            <ul class="d-flex flex-column justify-content-center h-100">
-              <li><p class="h5 pb-4 text-center fw-bold"> $<%= total_amount_helper(Expense.all.where(category_id:category.id)) %></p></li>
-              <li><%= button_to "Delete", category_path(category), method: :delete, class:"btn btn-primary" %></li>
-            </ul>
-          </div>
-        </div>
-        </div>  
+<div class="card m-3 rounded">
+  <div class="category-div d-inline-flex">
+    <div class="">
+      <p> <%= image_tag category.icon, class:"p-2 m-1 rounded img-thumbnail category-img"%></p>
+    </div>
+    <div class="w-100 d-inline-flex justify-content-between">
+      <div>
+        <ul class="d-flex flex-column justify-content-center h-100">
+          <li> <p class="h4 pb-4"><%= link_to category.name, category_path(category) %></p></li>
+          <li> <p> <%= category.created_at.strftime("%d-%b-%Y")%></p></li>
+        </ul>
       </div>
+      <div>
+        <ul class="d-flex flex-column justify-content-center h-100">
+          <li><p class="h5 pb-4 text-center fw-bold"> $<%= total_amount_helper(Expense.all.where(category_id:category.id)) %></p></li>
+          <li><%= button_to "Delete", category_path(category), method: :delete, class:"btn btn-primary" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>  
+</div>
  
   
