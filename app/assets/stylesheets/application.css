@@ -14,10 +14,8 @@
  *= require_self
  */
 
- .header {
-  background-color: #3678c2;
+ .height-10 {
   height: 10vh;
-  color: #fff;
 }
 
  .back_btn img {
