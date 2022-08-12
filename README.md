@@ -4,16 +4,24 @@ The Ruby on Rails capstone project is to build a mobile web application where I 
 
 I will create a Ruby on Rails application that allows the user to:
 
-    - register and log in, so that the data is private to them.
-    - introduce new transactions associated with a category.
-    - see the money spent on each category.
+- register and log in, so that the data is private to them.
+- Create categories and add expenses on each of these categories
+- see the expenses on each category.
+
+# Deployment
+
+[Heroku](https://rails-budget-app.herokuapp.com/)
+
+[Video](https://drive.google.com/file/d/1eqiAnuXBwW5S19FJ3VrfW_daMgJTrwUu/view?usp=sharing)
 
 ## Built With
 
 - Ruby
-- Ruby On Rails
-- RSpec
+- Rails
+- Devise
 - PostgreSQL
+- RSpec
+- Capybara
 
 ## Getting Started
 
