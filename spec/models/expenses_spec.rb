@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Expense, type: :model do
   before(:all) do
-    @user = User.create(name: 'Ran', email: 'example3@test.com', password: '123456')
+    @user = User.create(name: 'Ran', email: 'example11@test.com', password: '123456')
     expect(@user).to be_valid
     @category = Category.create(name: 'Fast-food', icon: 'fast-food.png', user_id: @user.id)
     expect(@category).to be_valid
