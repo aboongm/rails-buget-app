@@ -7,13 +7,13 @@
     </div>
 
     <% if flash[:notice] %>
-        <p class="alert alert-primary" role="alert"><%= notice %></p>
+        <p class="notice" role="alert"><%= notice %></p>
     <% end %>
     <%= render @category %>
     <% @expenses.each do |expense| %>
-        <div class="d-flex justify-content-between mb-2 mx-4 p-2 card m-3 rounded">
-            <div><%= expense.name.capitalize %></div>
-            <div>$<%= expense.amount %></div>
+        <div class="card m-3 rounded">
+            <div class="h4 py-2"><%= expense.name.capitalize %></div>
+            <p>$<%= expense.amount %></p>
         </div>
     <% end %>
 
