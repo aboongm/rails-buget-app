@@ -1,0 +1,17 @@
+<div class="row card m-3 ps-1 pe-3 rounded">
+  <div class="col-sm-4 m-0 p-0 d-flex align-items-center justify-content-center w-100">
+    <p class=""> <%= image_tag category.icon, class:"category-img"%></p>
+  </div>
+  <div class="col-sm-8 d-flex justify-content-between w-100 m-0 p-0">      
+    <ul class="d-flex flex-column align-items-center justify-content-start">
+      <li> <div class="h4 py-2"><%= link_to category.name, category_path(category) %></div></li>
+      <li> <p> <%= category.created_at.strftime("%d-%b-%Y")%></p></li>
+    </ul>
+    <ul class="d-flex flex-column justify-content-start m-0 p-0">
+      <li><p class="py-2 text-center fw-bold"> $<%= total_amount_helper(Expense.all.where(category_id:category.id)) %></p></li>      
+    </ul>
+  </div>
+</div>  
+
+ 
+  

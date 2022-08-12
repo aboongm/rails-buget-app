@@ -1,7 +1,7 @@
 class ExpensesController < ApplicationController
   def new
     @expense = Expense.new
-    @categories = Category.where(user_id: current_user.id)
+    @categories = Category.all.where(user_id: current_user.id)
   end
 
   def create
@@ -10,8 +10,7 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       if @expense.save
         format.html do
-          redirect_to category_url(Category.find(@expense.category_id)),
-                      notice: 'Expense was successfully created.'
+          redirect_to category_url(Category.find(@expense.category_id)), notice: 'Expense was successfully created.'
         end
       else
         format.html { render :new, status: :unprocessable_entity }

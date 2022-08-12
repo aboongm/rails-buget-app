@@ -1,0 +1,27 @@
+<section class="text-center vh-100">
+    <div class="header d-flex align-items-center justify-content-between px-4">
+    <div>
+        <%= link_to image_tag("https://img.icons8.com/ultraviolet/344/long-arrow-left.png"), root_path, class: "back_btn" %>
+    </div>
+        <h4 class="text-white">Transactions</h4>
+    </div>
+
+    <% if flash[:notice] %>
+        <p class="notice" role="alert"><%= notice %></p>
+    <% end %>
+    <%= render @category %>
+    <% @expenses.each do |expense| %>
+        <div class="card m-3 rounded">
+            <div class="h4 py-2"><%= expense.name.capitalize %></div>
+            <p>$<%= expense.amount %></p>
+        </div>
+    <% end %>
+
+    <div class="footer fixed-bottom py-4">        
+        <%= link_to "Add Expense", new_expense_path, class: "btn main-color" %>        
+        <% if user_signed_in? %> 
+           <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn main-color" %>
+        <% end %>
+    </div>
+</section>
+

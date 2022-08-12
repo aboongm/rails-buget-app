@@ -1,13 +1,13 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user!, except: [:public]
 
   def index
     @categories = Category.where(user_id: current_user.id)
   end
 
   def show
-    @category = Expense.all.where(category_id: @category.id)
+    @expenses = Expense.all.where(category_id: @category.id)
   end
 
   def new
@@ -16,12 +16,23 @@ class CategoriesController < ApplicationController
 
   def edit; end
 
-  def create; end
+  def create
+    @category = Category.new(category_params)
+    @category.user_id = current_user.id
+
+    respond_to do |format|
+      if @category.save
+        format.html { redirect_to category_url(@category), notice: 'Category was successfully created.' }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to category(@category), notice: 'Category was successfully updated.' }
+        format.html { redirect_to category_url(@category), notice: 'Category was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
