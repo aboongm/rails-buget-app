@@ -5,6 +5,7 @@ ruby '3.1.2'
 gem 'bootsnap', require: false
 gem 'cancancan'
 gem 'devise'
+gem 'ffi', '~> 1.15', '>= 1.15.5'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'
@@ -67,4 +68,11 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+end
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
