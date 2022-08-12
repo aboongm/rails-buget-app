@@ -1,0 +1,22 @@
+<div class="header d-flex align-items-center justify-content-between px-4">
+    <div>
+        <%= link_to image_tag("https://img.icons8.com/ultraviolet/344/long-arrow-left.png"), root_path, class: "back_btn" %>
+    </div>
+    <h4 class="text-white">Add a category</h4>      
+</div>
+
+    <%= form_with(model: category) do |f| %>
+        
+        <div class="text-center">
+        <div class="my-3 px-3">
+        <%= f.text_field :name, placeholder: "Category Name", require: true, class: 'w-100 bg-gray-100 p-2' %>
+        </div>
+        <div class="my-3 px-3">
+        <%= f.select :icon, {"🛒 General Items" => "https://cdn-icons-png.flaticon.com/512/891/891462.png", "🎮 Electronics" =>"https://cdn-icons-png.flaticon.com/512/808/808439.png", "🚌 Transportation" => "https://cdn-icons-png.flaticon.com/512/1034/1034795.png","💄 Daily Consumables"=>"https://img.icons8.com/external-wanicon-flat-wanicon/344/external-make-up-beauty-cosmetics-wanicon-flat-wanicon.png"}, {}, class: 'w-100 bg-gray-100 p-2' %>
+        </div>
+        <div class="form-group">  
+            <%= f.submit "Submit", class: "btn main-color" %>
+        </div>
+    <% end %>
+</div>
+
