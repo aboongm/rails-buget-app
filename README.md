@@ -1,8 +1,8 @@
 # Rails Budget App
 
-The Ruby on Rails capstone project is to build a mobile web application where I can manage my budget: I have a list of transactions associated with a category, so that I can see how much money I spent and on what.
+The Ruby on Rails capstone project builds a mobile web application where I can manage my budget: I have a list of transactions associated with a category, so that I can see how much money I spent and on what.
 
-I will create a Ruby on Rails application that allows the user to:
+I created a Ruby on Rails application that allowed the user to:
 
 - register and log in, so that the data is private to them.
 - Create categories and add expenses on each of these categories
